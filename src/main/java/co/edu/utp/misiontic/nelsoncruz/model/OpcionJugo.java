@@ -10,4 +10,9 @@ public class OpcionJugo {
     public String getNombre() {
         return nombre;
     }
+
+    @Override
+    public String toString() {
+        return "Jugo de " + nombre;
+    }
 }

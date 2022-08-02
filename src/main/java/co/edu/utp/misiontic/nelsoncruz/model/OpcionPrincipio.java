@@ -10,4 +10,9 @@ public class OpcionPrincipio {
     public String getNombre() {
         return nombre;
     }
+
+    @Override
+    public String toString() {
+        return "Principio de " + nombre;
+    }
 }

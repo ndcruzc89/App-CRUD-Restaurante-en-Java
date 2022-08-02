@@ -18,6 +18,10 @@ public class Mesa {
     public String getNumero() {
         return numero;
     }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
     
     public void adicionarPedido(Pedido pedido) {
         this.pedidos.add(pedido);
@@ -45,4 +49,11 @@ public class Mesa {
         // Retorno la devuelta
         return efectivo - total;
     }
+
+    @Override
+    public String toString() {
+        return "Mesa # " + numero;
+    }
+
+    
 }

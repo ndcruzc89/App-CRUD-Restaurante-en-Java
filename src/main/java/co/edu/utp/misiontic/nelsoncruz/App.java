@@ -11,12 +11,20 @@ import co.edu.utp.misiontic.nelsoncruz.model.OpcionJugo;
 import co.edu.utp.misiontic.nelsoncruz.model.OpcionPrincipio;
 import co.edu.utp.misiontic.nelsoncruz.model.OpcionSopa;
 import co.edu.utp.misiontic.nelsoncruz.model.Pedido;
+import co.edu.utp.misiontic.nelsoncruz.view.PrincipalVista;
 
 /**
  * Hello world!
  */
 public final class App {
     public static void main(String[] args) {
+        // prueba();
+        var menu = new PrincipalVista();
+        menu.iniciarAplicacion();
+        
+    }
+
+    private static void prueba() {
         var mesa = new Mesa("01");
 
         var sopa = new OpcionSopa("Pasta");
@@ -49,6 +57,5 @@ public final class App {
         } catch (EfectivoInsuficienteException ex) {
             System.err.println(ex.getMessage());
         }
-        
     }
 }
