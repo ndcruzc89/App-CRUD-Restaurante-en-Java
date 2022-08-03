@@ -3,6 +3,7 @@ package co.edu.utp.misiontic.nelsoncruz.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import co.edu.utp.misiontic.nelsoncruz.exception.EfectivoInsuficienteException;
 import co.edu.utp.misiontic.nelsoncruz.model.Mesa;
 import co.edu.utp.misiontic.nelsoncruz.model.OpcionCarne;
 import co.edu.utp.misiontic.nelsoncruz.model.OpcionEnsalada;
@@ -109,9 +110,38 @@ public class RestauranteControlador {
     }
 
     public void entregarPedidoDeMesa() {
+           // Seleccionar una mesa
+           var mesa = pedidoView.seleccionarMesa(listarMesas());
+
+           //Seleccionar pedio de la mesa a entregar
+           var pedido = pedidoView.seleccionarPedidoEntrega(mesa);
+           pedido.entregar();
     }
 
     public void pagarCuentaMesa() {
+        // Seleccionar una mesa
+        var mesa = pedidoView.seleccionarMesa(listarMesas());
+
+        var total = mesa.calcularValorPagar();
+        pedidoView.mostrarMensaje(String.format("La cuenta de mesa es: $ %,d.", total));
+
+        var efectivo = pedidoView.leerEfectivo();
+
+        try {
+            // Valido los datos
+            if (efectivo < total) {
+                // Devolver error de fondos insuficientes
+                throw new EfectivoInsuficienteException("El valor entregado no cubre el total a pagar");
+            }
+
+            // Limpiar pedidos
+            mesa.limpiarPedidos();
+
+            // Retorno la devuelta
+            pedidoView.mostrarMensaje(String.format("La devuelta es: $ %,d.", efectivo - total));
+        } catch (EfectivoInsuficienteException ex) {
+            pedidoView.mostrarError("El valor ingresado no es suficiente para cubrir la deuda.");
+        }
     }
 
     public void consultarEstadoMesa() {
