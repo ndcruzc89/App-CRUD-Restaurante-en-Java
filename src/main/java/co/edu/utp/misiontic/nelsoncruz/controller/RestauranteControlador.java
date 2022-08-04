@@ -42,67 +42,32 @@ public class RestauranteControlador {
     }
 
     private List<OpcionJugo> listarJugos() {
-        if (jugos == null) {
-            jugos = Arrays.asList(new OpcionJugo("Limonada"),
-                    new OpcionJugo("Guayaba"),
-                    new OpcionJugo("Mora"),
-                    new OpcionJugo("Uva"));
-        }
+        // TODO: Traerlos de la base de datos
         return jugos;
     }
 
     private List<OpcionEnsalada> listarEnsaladas() {
-        if (ensaladas == null) {
-            ensaladas = Arrays.asList(new OpcionEnsalada("Solo tómate"),
-                    new OpcionEnsalada("Tómate y cebolla"),
-                    new OpcionEnsalada("Aguacate"),
-                    new OpcionEnsalada("Rusa"));
-        }
+        // TODO: Traerlos de la base de datos
         return ensaladas;
     }
 
     private List<OpcionCarne> listarCarnes() {
-        if (carnes == null) {
-            carnes = Arrays.asList(new OpcionCarne("Res a la plancha"),
-                    new OpcionCarne("Cerdo a la plancha"),
-                    new OpcionCarne("Pechuga a la plancha"),
-                    new OpcionCarne("Hígado encebollado"));
-        }
+        // TODO: Traerlos de la base de datos
         return carnes;
     }
 
     private List<OpcionPrincipio> listarPrincipios() {
-        if (principios == null) {
-            principios = Arrays.asList(new OpcionPrincipio("Fríjoles"),
-                    new OpcionPrincipio("Lentejas"),
-                    new OpcionPrincipio("Papa guisada"),
-                    new OpcionPrincipio("Espaguetis"));
-        }
+        // TODO: Traerlos de la base de datos
         return principios;
     }
 
     private List<OpcionSopa> listarSopas() {
-        if (sopas == null) {
-            sopas = Arrays.asList(new OpcionSopa("Pasta"),
-                    new OpcionSopa("Consomé"),
-                    new OpcionSopa("Crema de Zanahoria"),
-                    new OpcionSopa("Caldo de Costilla"),
-                    new OpcionSopa("Verduras"));
-        }
+        // TODO: Traerlos de la base de datos
         return sopas;
     }
 
     private List<Mesa> listarMesas() {
-        if (mesas == null) {
-            mesas = Arrays.asList(new Mesa("VIP01"),
-                    new Mesa("VIP02"),
-                    new Mesa("P101"),
-                    new Mesa("P102"),
-                    new Mesa("P103"),
-                    new Mesa("P103"),
-                    new Mesa("P201"),
-                    new Mesa("P202"));
-        }
+        // TODO: Traerlos de la base de datos
         return mesas;
     }
 
