@@ -1,18 +1,25 @@
 package co.edu.utp.misiontic.nelsoncruz.model;
 
-import co.edu.utp.misiontic.nelsoncruz.exception.EfectivoInsuficienteException;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Mesa {
     private String numero;
     private List<Pedido> pedidos;
+    private Integer id;
 
     public Mesa(String numero) {
         this.numero = numero;
 
         pedidos = new ArrayList<>();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNumero() {

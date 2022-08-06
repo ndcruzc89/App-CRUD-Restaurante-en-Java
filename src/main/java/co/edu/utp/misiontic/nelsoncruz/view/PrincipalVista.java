@@ -8,7 +8,7 @@ import co.edu.utp.misiontic.nelsoncruz.controller.RestauranteControlador;
 public class PrincipalVista {
 
     private Scanner scanner;
-    private RestauranteControlador controlador;
+    private RestauranteControlador controlador; 
 
     public PrincipalVista() {
         scanner = new Scanner(System.in);
@@ -16,6 +16,7 @@ public class PrincipalVista {
     }
 
     public void iniciarAplicacion() {
+
         var mostrarMenu = true;
         while (mostrarMenu) {
             limpiarPantalla();
@@ -23,7 +24,7 @@ public class PrincipalVista {
             System.out.println("1 -> Gestion de pedidos");
             System.out.println("2 -> Gestion de tablas maestras");
             System.out.println("0 -> Salir de la aplicación");
-            System.out.print("Cuál es su elección?: "); 
+            System.out.print("Cual es su elección?: ");
             try {
                 var opcion = scanner.nextInt();
                 scanner.nextLine();
@@ -56,14 +57,14 @@ public class PrincipalVista {
 
     private void gestionPedidos() {
         limpiarPantalla();
-        System.out.println(".: GESTIÓN DE PEDIDOS :.");
+        System.out.println(".: GESTION DE PEDIDO :.");
         System.out.println("1 -> Agregar pedido a una mesa");
         System.out.println("2 -> Agregar adicional a pedido en una mesa");
         System.out.println("3 -> Entregar un pedido");
         System.out.println("4 -> Pagar la cuenta de una mesa");
         System.out.println("5 -> Consultar el estado de una mesa");
         System.out.println("0 -> Salir al menu principal");
-        System.out.print("Cuál es su elección?: "); 
+        System.out.print("Cual es su elección?: ");
         try {
             var opcion = scanner.nextInt();
             scanner.nextLine();
@@ -90,30 +91,29 @@ public class PrincipalVista {
             }
         } catch (InputMismatchException ex) {
             System.err.println("Opción inválida.");
-        } 
+        }
     }
 
     private void gestionMaestras() {
         limpiarPantalla();
-        System.out.println(".: GESTIÓN DE TABLAS MAESTRAS :.");
+        System.out.println(".: GESTION DE TABLAS MAESTRAS :.");
         System.out.println("1 -> Agregar mesas");
-        System.out.println("2 -> Agregar opción sopa");
-        System.out.println("3 -> Agregar opción principio");
-        System.out.println("4 -> Agregar opción carne");
-        System.out.println("5 -> Agregar opción ensalada");
-        System.out.println("6 -> Agregar opción jugo");
+        System.out.println("2 -> Agregar opcion sopa");
+        System.out.println("3 -> Agregar opcion principio");
+        System.out.println("4 -> Agregar opcion carne");
+        System.out.println("5 -> Agregar opcion ensalada");
+        System.out.println("6 -> Agregar opcion jugo");
         System.out.println("7 -> Agregar adicional");
         System.out.println("0 -> Salir al menu principal");
-        System.out.print("Cuál es su elección?: "); 
+        System.out.print("Cual es su elección?: ");
         try {
             var opcion = scanner.nextInt();
             scanner.nextLine();
             switch (opcion) {
                 case 0:
-                    // TODO: Implementar
                     break;
                 case 1:
-                    // TODO: Implementar
+                    controlador.agregarMesa();
                     break;
                 case 2:
                     // TODO: Implementar
@@ -138,7 +138,7 @@ public class PrincipalVista {
             }
         } catch (InputMismatchException ex) {
             System.err.println("Opción inválida.");
-        } 
+        }
     }
 
     private void limpiarPantalla() {

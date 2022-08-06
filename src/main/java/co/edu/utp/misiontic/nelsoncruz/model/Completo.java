@@ -1,6 +1,7 @@
 package co.edu.utp.misiontic.nelsoncruz.model;
 
 public class Completo extends OpcionPedido {
+    
     private OpcionSopa sopa;
 
     public Completo(Integer precio) {

@@ -2,6 +2,7 @@ package co.edu.utp.misiontic.nelsoncruz.model;
 
 public abstract class OpcionPedido {
     private Integer precio;
+
     private OpcionPrincipio principio;
     private OpcionCarne carne;
     private OpcionEnsalada ensalada;
@@ -63,6 +64,5 @@ public abstract class OpcionPedido {
         this.jugo = jugo;
     }
 
-    
 }
 
