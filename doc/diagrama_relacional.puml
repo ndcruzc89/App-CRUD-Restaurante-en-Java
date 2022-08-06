@@ -1,7 +1,7 @@
 @startuml "Diagrama relacional"
 
 entity Mesa {
-    id integer <<PK>>
+    id integer <<PK>> 
     --
     numero varchar(10) <<NN>> <<UQ>>
 }
@@ -25,7 +25,7 @@ entity Adicional {
 entity PedidoAdicional {
     id_pedido integer <<PK>> <<FK>>
     id_adicional integer <<PK>> <<FK>>
-    }
+}
 
 entity OpcionPedido {
     id_pedido integer <<PK>>
@@ -33,7 +33,7 @@ entity OpcionPedido {
     precio integer <<NN>>
     tipo varchar(10) <<NN>>
     --
-    id_sopa integer <<FK>> 
+    id_sopa integer <<FK>>
     id_principio integer <<NN>> <<FK>>
     id_carne integer <<NN>> <<FK>>
     id_ensalada integer <<FK>>
@@ -79,7 +79,7 @@ OpcionPedido }o--o| OpcionSopa
 OpcionPedido }o--|| OpcionPrincipio
 OpcionPedido }o--|| OpcionCarne
 OpcionPedido }o--o| OpcionEnsalada
-OpcionPedido }o--o| OpcionJugo
+OpcionPedido }o--|| OpcionJugo
 
 @enduml
 

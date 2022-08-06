@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
+
     private String cliente;
     private EstadoPedido estado;
     private List<Adicional> adicionales;
@@ -74,4 +75,5 @@ public class Pedido {
         return "Pedido [cliente=" + cliente + ", estado=" + estado + ", opcion=" + opcion
                 + ", adicionales=" + adicionales + "]";
     }
+
 }
